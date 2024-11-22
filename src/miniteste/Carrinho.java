@@ -4,12 +4,12 @@ public class Carrinho {
     private ArrayList<Produto> produtos;
 
     public Carrinho() {
-        this.produtos = new ArrayList<>();
+        produtos = new ArrayList<>();
     }
 
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
-        System.out.println(produto.getMarca() + " adicionado ao carrinho.");
+        System.out.println(produto.getMarca() + " foi adicionado ao carrinho.");
     }
 
     public double calcularTotal() {
@@ -20,51 +20,14 @@ public class Carrinho {
         return total;
     }
 
-    public void mostrarCarrinho() {
-        System.out.println("Produtos no carrinho:");
-        for (Produto produto : produtos) {
-            System.out.println(produto.getMarca() + " - " + produto.getPreco() + "Mt");
+    public void mostrarProdutosNoCarrinho() {
+        if (produtos.isEmpty()) {
+            System.out.println("O carrinho está vazio.");
+        } else {
+            System.out.println("Produtos no carrinho:");
+            for (Produto produto : produtos) {
+                System.out.println("- " + produto.getMarca() + " - " + produto.getPreco() + "Mt");
+            }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

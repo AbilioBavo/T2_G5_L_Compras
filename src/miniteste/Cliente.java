@@ -1,63 +1,16 @@
-public class Cliente {
-    private String tipo;
-    private double desconto;
+public abstract class Cliente {
+    public abstract double aplicarDesconto(double total);
 
-    public Cliente(String tipo, double desconto) {
-        this.tipo = tipo;
-        this.desconto = desconto;
-    }
-
-    public double aplicarDesconto(double total) {
-        return total - (total * desconto / 100);
-    }
-
-    public static Cliente criarCliente(int categoriaCliente) {
-        switch (categoriaCliente) {
+    public static Cliente criarCliente(int categoria) {
+        switch (categoria) {
+            case 1:
+                return new ClienteNormal();
             case 2:
-                return new Cliente("Premium", 25);
+                return new ClientePremium();
             case 3:
-                return new Cliente("Socio", 50);
+                return new ClienteSocio();
             default:
-                return new Cliente("Normal", 0);
+                return null;
         }
     }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public double getDesconto() {
-        return desconto;
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-public class Produto {
+public abstract class Produto {
     private String marca;
     private double preco;
 
@@ -15,29 +15,3 @@ public class Produto {
         return preco;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
